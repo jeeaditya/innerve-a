@@ -1,0 +1,62 @@
+
+<!DOCTYPE html> 
+<html> 
+  
+<head> 
+    <title>MediWiz</title> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+</head> 
+  
+<body> 
+    <nav class="navbar navbar-light border-bottom text-center custom mb-5">
+        <h1 style="color: black;"><strong>Welcome To MediWiz</strong></h1>
+    </nav>
+    <div class="container">
+        <div class="row m-2 container">
+        <div class="col-md-6">
+            <div class="card container text-center p-4">
+                <div class="mb-5">
+                    <h3 class="card-header">Gather Complete Details Of Your Medicine!!</h3>
+                </div>
+                <form action="/uploadMedicine" enctype="multipart/form-data" method="POST"> 
+                    <span>Upload Your Sample Here:</span> <br/>  
+                    <input type="file" class="btn btn-secondary" name="mypic" required/> <br/> <br/>
+                    <input type="submit" value="Submit" class="btn btn-success">  
+                </form> 
+                <br/>
+                <strong>OR</strong>
+                <br/>
+                <form action="/uploadText" enctype="multipart/form-data" method="POST"> 
+            
+                    <span>Enter Text:</span> <br/> 
+                    <input type="text" class="form-control" required/> <br/>
+                    <input type="submit" value="Submit" class="btn btn-success">  
+                </form>
+            </div>  
+        </div>
+        <div class="col-md-6">
+            <div class="card container text-center p-4">
+                <% if(details){%>
+            <div class="container"> 
+                <h3>The Best Match are as Follows:</h3><br/>
+                Name: <strong><%= details.name %></strong> <br/>
+                Price:  <strong>Rs.<%=  details.price%></strong> <br/>
+                Manufacturer:  <strong><%= details.manu%></strong> <br/>
+                Composition:  <strong><%= details.comp%></strong> <br/>
+                Uses:  <strong><%= details.uses%></strong> <br/>
+                Side-Effects: <strong><%= details.side%></strong> <br/>
+            </div>
+            <%} else {%>
+            <div class="container uncheck">
+                <h3>Upload Your Medicine Details to get Started</h3>
+            </div>
+            <% } %>
+            </div>
+            
+        </div>
+    </div>
+    </div>
+    
+</body> 
+</html> 
