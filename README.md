@@ -22,6 +22,8 @@ The first challenge was, that there was no free database on the internet for the
 
 The next problem we faced was while applying OCR. As the text on the medicine strip is extremely small, so it's very hard for the Tesseract OCR model to identify the text on the strip. It needs a very clear and sharp image for suitable results. The back of the medicine strips also don't have a plain surface, which also makes it impossible to detect any text. This problem could be solved using training the OCR model on Medicine images data.
 
+## User Interface:
+![Alt text](/public/img/display.jpeg?raw=true "Title")
 ## To use:
 
 1. Install Node.js
